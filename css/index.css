@@ -12,7 +12,11 @@ button {
   background: transparent;
   cursor: pointer;
 }
-
+.logo {
+  text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em white;
+  text-transform: uppercase !important;
+  margin-top: 10px;
+}
 .navbar,
 .navbar-burger,
 .menu,
@@ -125,6 +129,27 @@ h2 {
   font-weight: bold !important;
   letter-spacing: 4px;
 }
+
+.textOverlay {
+  background: url(../images/pexels-chris-f-38966-1283219.jpg);
+  background-size: cover;
+  height: 500px !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  position: relative; /* Add position relative for absolute positioning of text */
+}
+
+.overlayText,
+.discoverText {
+  color: white !important;
+  font-weight: bold !important;
+  letter-spacing: 4px;
+  opacity: 0; /* Initially set opacity to 0 for fade-in effect */
+  animation: fadeInText 2s forwards; /* Apply fadeInText animation */
+}
+
 .shoppingBtn {
   background-color: white;
   padding: 10px 15px;
@@ -132,4 +157,28 @@ h2 {
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0px 3px 23px 3px rgba(255, 255, 255, 0.63);
+  opacity: 0; /* Initially set opacity to 0 for fade-in effect */
+  animation: fadeInButton 2s forwards; /* Apply fadeInButton animation */
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0; /* Start from fully transparent */
+    transform: translateY(-20px); /* Move up slightly */
+  }
+  to {
+    opacity: 1; /* Fade in to fully opaque */
+    transform: translateY(0); /* Move down to original position */
+  }
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0; /* Start from fully transparent */
+    transform: translateY(-20px); /* Move up slightly */
+  }
+  to {
+    opacity: 1; /* Fade in to fully opaque */
+    transform: translateY(0); /* Move down to original position */
+  }
 }
